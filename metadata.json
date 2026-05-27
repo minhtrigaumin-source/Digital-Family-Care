@@ -1,0 +1,6 @@
+{
+  "name": "Quản lý Sức khỏe Hộ Gia đình Phường Tân Hưng",
+  "description": "Hệ thống quản lý hồ sơ sức khỏe người dân theo hộ gia đình cấp Phường/Xã tích hợp trợ lý sức khỏe AI.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

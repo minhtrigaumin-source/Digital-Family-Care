@@ -1,0 +1,82 @@
+{
+  "entities": {
+    "WardInfo": {
+      "title": "WardInfo",
+      "description": "Metadata for the ward office and health center",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "district": { "type": "string" },
+        "province": { "type": "string" },
+        "population": { "type": "integer" },
+        "healthCenterPhone": { "type": "string" },
+        "healthCenterAddress": { "type": "string" }
+      },
+      "required": ["name", "district", "province", "population", "healthCenterPhone", "healthCenterAddress"]
+    },
+    "Household": {
+      "title": "Household",
+      "description": "A family or household unit",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "headName": { "type": "string" },
+        "address": { "type": "string" },
+        "phoneNumber": { "type": "string" },
+        "quarter": { "type": "string" },
+        "neighborhoodGroup": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["id", "headName", "address", "phoneNumber", "quarter", "neighborhoodGroup", "createdAt"]
+    },
+    "EpidemiologicalAlert": {
+      "title": "EpidemiologicalAlert",
+      "description": "An epidemiological active health alert in the ward",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "type": { "type": "string" },
+        "location": { "type": "string" },
+        "casesCount": { "type": "integer" },
+        "riskLevel": { "type": "string" },
+        "announcementDate": { "type": "string" },
+        "recommendation": { "type": "string" },
+        "active": { "type": "boolean" }
+      },
+      "required": ["id", "type", "location", "casesCount", "riskLevel", "announcementDate", "recommendation", "active"]
+    },
+    "User": {
+      "title": "User",
+      "description": "System user account",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "email": { "type": "string" },
+        "password": { "type": "string" },
+        "role": { "type": "string" },
+        "title": { "type": "string" },
+        "status": { "type": "string" },
+        "phone": { "type": "string" }
+      },
+      "required": ["name", "email", "password", "role", "title", "status", "phone"]
+    }
+  },
+  "firestore": {
+    "ward": {
+      "schema": "WardInfo",
+      "description": "Global ward settings and health center information"
+    },
+    "households": {
+      "schema": "Household",
+      "description": "List of tracked household records"
+    },
+    "alerts": {
+      "schema": "EpidemiologicalAlert",
+      "description": "Epidemiological warnings and advisories"
+    },
+    "users": {
+      "schema": "User",
+      "description": "Tracked system login accounts"
+    }
+  }
+}
